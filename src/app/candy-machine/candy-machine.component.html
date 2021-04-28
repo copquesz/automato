@@ -1,0 +1,40 @@
+
+<div class="container-fluid min-vh-100 d-flex align-items-center">
+  <div class="row my-3">
+    <div class="col-xl-6 m-auto">
+      <div class="row">
+        <div class="col-12">
+          <h1 class="title my-5">Candy Machine</h1>
+        <p class="lead text-justify">A Candy machine possui três itens para serem selecionados: Bala, Sorvete e Pirulito. Cada item possui seu respectivo valor. Para iniciar a Candy Machine, clique em OK. Após iniciar a Candy Machine, insira a quantia desejada e acompanhe no painel de informações e no Canvas correspondendo ao automato da Candy Machine o passo a passo e os estados da máquina.</p>
+        <div class="text-center mt-5">
+          <a class="btn btn-primary btn-lg active mx-2" [routerLink]="['/']">Voltar</a>
+        </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <h1 class="title my-5">Automato</h1>
+          <canvas id="canvas-automato" #automato></canvas>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-6">
+      <div class="row">
+        <div class="col-12">
+          <h1 class="title my-5">Canvas</h1>
+          <canvas id="canvas-candy-machine" #candyMachine></canvas>
+          <div class="alert alert-info mt-3">
+            <h4 class="alert-heading">Painel de Informações</h4>
+            <b>Estado:</b>
+            <ul>
+              <li *ngFor="let item of this.info">{{item}}</li>
+            </ul>
+            <p *ngIf="this.totalInsert"><b>Total Inserido:</b> <br>R$ {{this.totalInsert}},00</p>
+            <p *ngIf="this.totalRequest"><b>Total Solicitado:</b> <br>R$ {{this.totalRequest}},00</p>
+            <p *ngIf="this.transshipment"><b>Total Troco:</b> <br>R$ {{this.transshipment}},00</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
